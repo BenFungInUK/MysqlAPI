@@ -7,9 +7,9 @@ var app = express();
 //Database connection
 app.use(function(req, res, next){
 	global.connection = mysql.createConnection({
-		host     : 'localhost',
-		user     : 'root',
-		password : 'Pa$$w0rd',
+		host     : 'testing.cmf2hhpcxznd.eu-west-2.rds.amazonaws.com',
+		user     : 'admin',
+		password : 'pa$$w0rd',
 		database : 'Testing'
 	});
 	connection.connect();
