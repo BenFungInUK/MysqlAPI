@@ -1,7 +1,11 @@
 var express = require('express');
 var router = express.Router();
 var bodyParser = require('body-parser');
-var jsonParser = bodyParser.json()
+var jsonParser = bodyParser.json();
+
+router.get('/', function(req, res, next) {
+	res.send("Mysql API");
+});
 
 router.get('/getUsers', function(req, res, next) {
 	connection.query('SELECT * FROM users', function (error, results, fields) {
