@@ -7,10 +7,10 @@ var app = express();
 //Database connection
 app.use(function(req, res, next){
 	global.connection = mysql.createConnection({
-		host     : 'testing.cmf2hhpcxznd.eu-west-2.rds.amazonaws.com',
-		user     : 'admin',
-		password : 'pa$$w0rd',
-		database : 'Testing'
+		host     : process.env.RDS_HOSTNAME,
+		user     : process.env.RDS_USERNAME,
+		password : process.env.RDS_PASSWORD,
+		port: process.env.RDS_PORT
 	});
 	connection.connect();
 	next();
